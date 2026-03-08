@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Property Insurance Fraud Detection</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+    font-family: Arial;
+    background:#749edd;
+    margin:0;
+}
+
+.navbar{
+    background:#1e3c72;
+    color:white;
+    padding:15px;
+    text-align:center;
+    font-size:20px;
+}
+
+.container{
+    width:450px;
+    margin:30px auto;
+    background:rgb(56, 106, 245);
+    padding:30px 80px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+input{
+    width:95%;
+    padding:10px;
+    margin:8px 0;
+}
+
+button{
+    padding:10px 20px;
+    background:#b46e4b;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+.result{
+    margin-top:20px;
+    font-size:18px;
+}
+
+.dashboard{
+    width:600px;
+    margin:40px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.red{color:red;font-weight:bold;}
+.orange{color:orange;font-weight:bold;}
+.green{color:rgb(18, 229, 18);font-weight:bold;}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+🏠 Property Insurance Fraud Detection System
+</div>
+
+<div class="container">
+
+<h2>Enter Claim Details</h2>
+
+<form action="/predict_property" method="post">
+
+<input type="number" name="age" placeholder="Policy Holder Age"
+value="{{ request.form.age }}" required>
+
+<input type="number" name="months_as_customer"
+placeholder="Months as Customer"
+value="{{ request.form.months_as_customer }}" required>
+
+<input type="number" name="policy_annual_premium"
+placeholder="Annual Premium"
+value="{{ request.form.policy_annual_premium }}" required>
+
+<input type="number" name="total_claim_amount"
+placeholder="Total Claim Amount"
+value="{{ request.form.total_claim_amount }}" required>
+
+<button type="submit">Predict</button>
+
+</form>
+
+ <!-- Prediction Result -->
+{% if result %}
+
+<p class="result {{ color }}">{{ result }}</p>
+
+<p><b>Fraud Probability:</b> {{ probability }}%</p>
+
+<br>
+
+<a href="/">
+<button>🔐 Go To Login Page</button>
+</a>
+
+{% endif %}
+
+</div>
+
+
+</body>
+</html>

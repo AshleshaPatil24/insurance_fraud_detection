@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Insurance Fraud Detection</title>
+<style>
+body{
+    font-family: Arial;
+    background:#e0a6a6;
+    margin: 0;
+}
+.navbar {
+        background: rgb(151, 68, 68);
+        color: white;
+        padding: 30px;
+        text-align: center;
+        font-size: 40px;
+}
+
+.container{
+width:350px;
+margin: 60px auto;
+padding:100px 150px;
+background:rgb(151, 68, 68);
+border-radius:50px;
+text-align:center;
+box-shadow:10px 10px 10px #ccc;
+}
+
+select{
+width:90%;
+padding:10px;
+margin:10px;
+}
+
+/* Button */
+button{
+display:block;
+margin:20px auto;
+padding:11px 100px;
+background:#007BFF;
+border:none;
+color:white;
+border-radius:5px;
+font-size: 20px ;
+}
+
+
+button:hover{
+background:#0056b3;
+}
+
+select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #b55998;
+    border-radius: 8px;
+    background-color: hsl(189, 58%, 68%);
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* Remove default arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Custom arrow */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23b55998' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+/* Hover Effect */
+select:hover {
+    border-color: #8c6fbb;
+}
+
+/* When clicked */
+select:focus {
+    border-color: #6a4fb3;
+    box-shadow: 0 0 8px rgba(106, 79, 179, 0.4);
+}
+
+/* Option Styling */
+option {
+    padding: 10px;
+}
+.dropdown {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #b55998;
+    border-radius: 8px;
+    background-color: white;
+    color: #555;
+    outline: none;
+    
+}
+
+/* Color when "Select Insurance Type" is shown */
+.dropdown:invalid {
+    color: #999;   /* grey placeholder */
+}
+
+/* Color when user selects an option */
+.dropdown:valid {
+    color: #6a4fb3;   /* purple selected text */
+}
+
+/* Dropdown options */
+.dropdown option {
+    color: #333;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="navbar">
+    Insurance Fraud Detection System
+</div>
+
+<div class="container">
+
+<h2>Insurance Fraud Detection</h2>
+
+<form action="/select" method="post">
+
+
+<select name="insurance_type" required>
+
+<option value="" disabled selected hidden>Select Insurance Type</option>
+
+<option value="auto">🚗 Auto Insurance</option>
+<option value="health">🏥 Health Insurance</option>
+<option value="property">🏠 Property Insurance</option>
+
+</select>
+
+<br>
+
+<button type="submit">Let's Check</button>
+
+</form>
+
+</div>
+
+
+
+</body>
+</html>
