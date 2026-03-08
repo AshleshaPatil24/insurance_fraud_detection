@@ -7,37 +7,44 @@
 <style>
 body{
     font-family: Arial;
-    background:#749edd;
-    margin:0;
+    margin: 0;
+    background-image: url("../static/images/property1.png");
 }
 
-.navbar{
-    background:#1e3c72;
-    color:white;
-    padding:15px;
+.navbar {
+    color: black;
+    padding: 5px;
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+    background:rgba(255, 255, 255, 0.3);
+    box-shadow:10px 10px 10px #ccc;
     text-align:center;
-    font-size:20px;
+    width: 700px;        /* same as container */
+    margin: 20px auto; 
 }
 
 .container{
-    width:450px;
-    margin:30px auto;
-    background:rgb(56, 106, 245);
-    padding:30px 80px;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    text-align:center;
+width:550px;
+margin: 20px auto;
+padding:30px 40px;
+background:rgba(255, 255, 255, 0.3);
+border-radius:50px;
+text-align:center;
+box-shadow:10px 10px 10px #ccc;
 }
 
-input{
-    width:95%;
-    padding:10px;
-    margin:8px 0;
-}
+    input {
+        width: 95%;
+        padding: 6px;
+        margin: 8px 0;
+        background-color: #1a4f89;
+        color: white;
+    }
 
 button{
     padding:10px 20px;
-    background:#b46e4b;
+    background:#033162;
     color:white;
     border:none;
     border-radius:5px;
@@ -45,12 +52,13 @@ button{
 }
 
 button:hover{
-    background:#0056b3;
+    background:#033162;
 }
 
 .result{
     margin-top:20px;
     font-size:18px;
+    font-weight:bold;
 }
 
 .dashboard{
@@ -61,9 +69,12 @@ button:hover{
     border-radius:10px;
 }
 
-.red{color:red;font-weight:bold;}
-.orange{color:orange;font-weight:bold;}
-.green{color:rgb(18, 229, 18);font-weight:bold;}
+.red{
+    color:red;
+    background-color: aqua;
+}
+.green{color:green;
+         background-color: aqua;}
 
 </style>
 </head>
@@ -75,7 +86,7 @@ button:hover{
 </div>
 
 <div class="container">
-
+<p>Evaluates property value, claim timing, and damage reports to detect fraud. Flags inflated or false claims related to fire, theft, or natural disasters for risk managers.</p>
 <h2>Enter Claim Details</h2>
 
 <form action="/predict_property" method="post">
@@ -109,7 +120,7 @@ value="{{ request.form.total_claim_amount }}" required>
 <br>
 
 <a href="/">
-<button>🔐 Go To Login Page</button>
+<button>🔐 Go To Home Page</button>
 </a>
 
 {% endif %}

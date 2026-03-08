@@ -4,40 +4,56 @@
     <title>🔍Insurance Fraud Detection</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-    body {
-        font-family: Arial;
-        background: #8c6fbb;
-        margin: 0;
-    }
+body{
+    font-family: Arial;
+    margin: 0;
+    background-image: url("../static/images/auto3.png");
+}
 
-    .navbar {
-        background: #b55998;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        font-size: 40px;
-    }
+.navbar {
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    background:rgba(255, 255, 255, 0.3);
+    box-shadow:10px 10px 10px #ccc;
+    text-align:center;
+    width: 650px;        /* same as container */
+    margin: 20px auto; 
+}
 
-    .container {
-        width: 550px;
-        margin: 10px auto;
-        background: rgb(24, 166, 201);
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        text-align: center;
-        height:460px ;
-    }
+.container{
+width:550px;
+margin: 20px auto;
+padding:5px 5px;
+background:rgba(255, 255, 255, 0.3);
+border-radius:50px;
+text-align:center;
+box-shadow:10px 10px 10px #ccc;
+}
+.form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* 2 columns */
+    gap: 10px 20px;   /* row gap , column gap */
+    margin-top: 10px;
+}
+
+.form-grid input{
+    width: 100%;
+}
 
     input {
         width: 95%;
-        padding: 8px;
+        padding: 6px;
         margin: 8px 0;
+        background-color: #1a4f89;
+        color: white;
     }
 
     button {
-        padding: 10px 20px;
-        background: #b55998;
+        padding: 8px 16px;
+        background: #05284d;
         color: white;
         border: none;
         border-radius: 5px;
@@ -45,7 +61,7 @@
     }
 
     button:hover {
-        background: #7f8a96;
+        background: #1c5593;
     }
 
     .result {
@@ -65,6 +81,7 @@
     .red {
         color: red;
         font-weight: bold;
+        background-color: aqua;
     }
 
     .orange {
@@ -75,6 +92,7 @@
     .green {
         color: green;
         font-weight: bold;
+        background-color: aqua;   
     }
 </style>
 </head>
@@ -85,9 +103,12 @@
 </div>
 
 <div class="container">
+    <p>Analyzes vehicle damage details, claim amounts, and customer history to identify suspicious auto insurance claims and classify them as fraud or genuine, reducing financial losses.</p>
     <h2>Enter Claim Details</h2>
 
 <form action="/predict_auto" method="post"> 
+
+<div class="form-grid">
 
 <input type="number" name="age" placeholder="Age" 
 value="{{ request.form.age }}" required>
@@ -112,7 +133,12 @@ value="{{ request.form.incident_hour_of_the_day }}" required>
 placeholder="Vehicles Involved" 
 value="{{ request.form.number_of_vehicles_involved }}" required>
 
+</div>
+
+<br>
+
 <button type="submit">Predict</button>
+
 </form>
 
  <!-- ✅ Display prediction result here -->
@@ -124,7 +150,7 @@ value="{{ request.form.number_of_vehicles_involved }}" required>
 <br>
 
 <a href="/">
-<button>🔐 Go To Login Page</button>
+<button>🔐 Go To Home Page</button>
 </a>
 
 {% endif %}

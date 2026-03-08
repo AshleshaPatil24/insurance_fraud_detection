@@ -6,22 +6,29 @@
 <style>
 body{
     font-family: Arial;
-    background:#e0a6a6;
     margin: 0;
+    background-image: url("../static/images/fraud1.jpg");
 }
+
 .navbar {
-        background: rgb(151, 68, 68);
-        color: white;
-        padding: 30px;
-        text-align: center;
-        font-size: 40px;
+    color: black;
+    margin-top: 60 auto;
+    padding: 30px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    background:rgba(255, 255, 255, 0.3);
+    box-shadow:10px 10px 10px #ccc;
+    text-align:center;
+    width: 950px;        /* same as container */
+    margin: 30px auto; 
 }
 
 .container{
-width:350px;
+width:450px;
 margin: 60px auto;
-padding:100px 150px;
-background:rgb(151, 68, 68);
+padding:80px 150px;
+background:rgba(255, 255, 255, 0.3);
 border-radius:50px;
 text-align:center;
 box-shadow:10px 10px 10px #ccc;
@@ -38,7 +45,7 @@ button{
 display:block;
 margin:20px auto;
 padding:11px 100px;
-background:#007BFF;
+background:#06203b;
 border:none;
 color:white;
 border-radius:5px;
@@ -54,10 +61,10 @@ select {
     width: 100%;
     padding: 12px 15px;
     font-size: 16px;
-    border: 2px solid #b55998;
+    border: 2px solid #3276b3;
     border-radius: 8px;
-    background-color: hsl(189, 58%, 68%);
-    color: #333;
+    background-color: #06203b;
+    color:white;
     outline: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -75,7 +82,8 @@ select {
 
 /* Hover Effect */
 select:hover {
-    border-color: #8c6fbb;
+    border-color: #6237a7;
+    border-width: 5px;
 }
 
 /* When clicked */
@@ -127,6 +135,7 @@ option {
 <div class="container">
 
 <h2>Insurance Fraud Detection</h2>
+<p>Insurance Fraud Detection can be prevented by analyzing previous fraud data and detecting the same patterns in real-time using machine learning.</p>
 
 <form action="/select" method="post">
 
